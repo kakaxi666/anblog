@@ -8,8 +8,14 @@
         <!-- <img class="pic" src="@/assets/header.jpeg" alt="" /> -->
       </el-header>
       <el-container>
-        <el-aside class="myside">Aside</el-aside>
-        <el-container>
+        <el-aside class="myside">
+          <div>
+            <div>
+              <i class="el-icon-collection"></i>Navigation
+            </div>
+          </div>
+        </el-aside>
+        <el-container class="main">
           <el-main>Main</el-main>
           <el-footer>Footer</el-footer>
         </el-container>
@@ -24,6 +30,7 @@
 
 export default {
   name: "HomeView",
+
   data() {
     return {
       // 背景图片
@@ -31,21 +38,35 @@ export default {
         backgroundImage: 'url(' + require('@/assets/header.jpeg') + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%'
-      }
+      },
+      asideList:["Navigation","公告","分列标签"]
+      
     }
+  },
+  created() {
+ 
+  },
+  mounted(){
+
+  },
+  methods: {
+   
   }
+
 };
 </script>
 
 <style lang="scss" scoped>
+
 .mycontainer{
   height: 100% !important
   ;
 }
 .myside{
   width: 200px;
-  height: 70vh;
+  height: 68vh !important;
 }
+
 .home{
   height: 100%;
 }
@@ -68,4 +89,7 @@ export default {
   left:0px;
   top:0px
 }
+
+
+
 </style>
