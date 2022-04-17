@@ -10,13 +10,39 @@
       <el-container>
         <el-aside class="myside">
           <div>
+              <div>
+                <i class="el-icon-collection"></i>
+                <span style="margin-left:10px;">
+                  Navigation
+                </span>
+              </div>
+              <el-divider class="elDivider"></el-divider>
+              <el-card class="box-card">
+                <!-- <div v-for="o in 4" :key="o" class="text item">
+                  {{'列表内容 ' + o }}
+                </div> -->
+                <div>
+                  <router-link to="/welcome">首页</router-link>
+                </div>
+                <div>
+                  <router-link to="/upload/">上传页</router-link>
+                </div>
+                
+                
+                
+              </el-card>  
+          </div>
+          <div style="100%">
             <div>
               <i class="el-icon-collection"></i>Navigation
             </div>
           </div>
+          
         </el-aside>
         <el-container class="main">
-          <el-main>Main</el-main>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
@@ -65,6 +91,11 @@ export default {
 .myside{
   width: 200px;
   height: 68vh !important;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-content:flex-start !important
+
 }
 
 .home{
@@ -89,7 +120,17 @@ export default {
   left:0px;
   top:0px
 }
+.text {
+    font-size: 14px;
+  }
 
+.item {
+  padding: 4px 60px 0 0;
+}
+
+.elDivider{
+  margin: 2px 0 24px 0 !important;
+}
 
 
 </style>

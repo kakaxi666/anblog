@@ -5,10 +5,26 @@ import HomeView from "../views/HomeView.vue";
 Vue.use(VueRouter);
 
 const routes = [
+  // {
+  //   path: "/",
+  //   redirect:'/welcome',
+  // },
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
+    path:'/',
+    name:"home",
+    redirect:'/welcome',
+    children:[
+      {
+        path:'/welcome',
+        name:'welcome',
+        component:()=>import('../views/main/Welcome.vue'),
+      },
+      {
+        path:'/upload',
+        name:'upload',
+        component:()=>import('../views/AboutView.vue'),
+      }
+          ]
   },
   {
     path: "/about",
